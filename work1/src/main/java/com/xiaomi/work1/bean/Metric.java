@@ -35,7 +35,7 @@ public class Metric implements Serializable {
     /**
      *当前主机名称
      */
-    private  String endPoint;
+    private  String endpoint;
 
     /**
      *采集数据时的时间

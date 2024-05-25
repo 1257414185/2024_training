@@ -13,7 +13,28 @@ import lombok.Data;
  */
 @Data
 public class Result<T> {
-    private  int code;
+    private int code;
     private String message;
     private T data;
+
+    public Result(int code, String message, T data) {
+        this.code = code;
+        this.message = message;
+        this.data = data;
+    }
+
+    public Result() {
+    }
+
+    public static <T> Result<T> Ok() {
+        return new Result<>(200, "ok", null);
+    }
+    public static <T> Result<T> Ok(T data) {
+        return new Result<>(200, "ok", data);
+    }
+    public static <T> Result<T> error(String msg) {
+        return new Result<>(200, msg, null);
+    }
+
+
 }
